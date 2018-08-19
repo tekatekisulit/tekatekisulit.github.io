@@ -70,7 +70,12 @@ function quiz(data,index){
 			answer[item].setAttribute('value',dataAnswer[item]);
 		});	
 
-		$('#submit').on('click touchstart', function(){
+		var btn = document.querySelector('#submit');
+		btn.addEventListener('touchstart',checkAnswer);
+		btn.addEventListener('touchend',checkAnswer);
+		btn.addEventListener('click',checkAnswer);
+
+		function checkAnswer(){
 			var answerColumn = document.querySelectorAll('.answer');
 			var answer = "";
 
@@ -96,7 +101,6 @@ function quiz(data,index){
 					quiz(data,index);	
 				}
 				
-			}
-			
-		});
+			}	
+		};
 }
