@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Boogaloo');
 
 body, h1, h2, h3, h4, h5, h6{
   margin: 0;
 }
 
-div, section, article{
+div, section, article, input{
   box-sizing: border-box;
 }
-
 
 .container{
   display:flex;
@@ -45,6 +43,7 @@ div, section, article{
   height: 60vh;
   margin-right: auto;
   margin-left: auto;
+  z-index: -1;
 
 }
 
@@ -54,21 +53,26 @@ div, section, article{
   padding: 1em;
   background: linear-gradient(to bottom right,#223A5E,black);
   font-size: 0.9em;
-  font-family: 'Lato', sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.5;
 }
 
 .answer-wrapper{
   margin-top: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .answer{
   width: 2em;
   font-size: 1em;
-  font-family: 'Lato', sans-serif;
+  font-family: Arial,sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 3px 3px 3px 7px;
+  padding: 0.1em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 0.5em;
 }
 
 .copyright{
