@@ -62,6 +62,3 @@ function shuffle(array) {
 
   return array;
 }
-
-var container = document.querySelector('body');
-container.style.back
