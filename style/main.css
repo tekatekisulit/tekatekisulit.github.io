@@ -70,10 +70,9 @@ div, section, article, input{
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0.1em;
+  padding: 0.1rem 0.1rem 0.1rem 0.5rem;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
-  padding-left: 0.5em;
 }
 
 #submit{
