@@ -109,9 +109,6 @@ div, section, article, input{
   bottom: 0;
 }
 
-audio{
-  display: hidden;
-}
 
 @media screen and (min-width:500px){
 
