@@ -13,14 +13,7 @@ fetch(url).then(function(response){
 }).then(function(data){
 	var randomData = shuffle(data);
 
-
 	quiz(randomData,indexData);
-
-	// var data = randomData;
-	// indexData = indexData + 1;
-	
-		
-
 });
 
 
@@ -77,7 +70,7 @@ function quiz(data,index){
 			answer[item].setAttribute('value',dataAnswer[item]);
 		});	
 
-		document.querySelector('#submit').onclick = function(){
+		$('#submit').on('click touchstart', function(){
 			var answerColumn = document.querySelectorAll('.answer');
 			var answer = "";
 
@@ -89,14 +82,15 @@ function quiz(data,index){
 			if(answer == dataAnswer){
 				
 				if(index == data.length - 1){
-					dataQuestion.textContent = "Selamat, saudara memiliki IQ diatas rata - rata";
+					dataQuestion.textContent = "Selamat, saudara memiliki IQ diatas rata - rata";				
 
 					if(answerWrapper.hasChildNodes){
 						while (answerWrapper.hasChildNodes()) {
 				    		answerWrapper.removeChild(answerWrapper.lastChild);
 						}	
 					}
-					
+
+
 				}else{
 					index= index+1;
 					quiz(data,index);	
@@ -104,5 +98,5 @@ function quiz(data,index){
 				
 			}
 			
-		};
+		});
 }
