@@ -51,7 +51,7 @@ div, section, article, input{
 .quiz{
   color: white;
   border-radius: 5px;
-  padding: 1em;
+  padding: 1.5em;
   background: linear-gradient(to bottom right,#223A5E,black);
   font-size: 0.9em;
   font-family: 'Lato', sans-serif;
@@ -86,10 +86,6 @@ div, section, article, input{
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   border: 1px solid transparent;
   padding: .25em;
   font-size: 1em;
@@ -108,7 +104,6 @@ div, section, article, input{
   right: 0;
   bottom: 0;
 }
-
 
 @media screen and (min-width:500px){
 
