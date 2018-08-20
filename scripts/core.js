@@ -2,12 +2,6 @@
 var url = 'https://tekatekisulit.herokuapp.com/api/view';
 var indexData = 0;
 
-setInterval(function() {
-   fetch(url).then(function(response){
-		return response.json();
-	})
-}, 300000); // every 5 minutes (300000)
-
 fetch(url).then(function(response){
 	return response.json();
 }).then(function(data){
@@ -104,3 +98,5 @@ function quiz(data,index){
 			}	
 		};
 }
+
+

@@ -70,10 +70,18 @@ div, section, article, input{
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0.1rem 0.1rem 0.1rem 0.5rem;
+  padding: 0.1em;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
 }
+
+/* Chrome 29+ */
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    .answer { padding-left: 0.5em; } 
+}
+
 
 #submit{
   font-family: 'Lato', sans-serif;
