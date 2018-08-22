@@ -57,6 +57,13 @@ function quiz(data,index){
 
 			document.querySelector('.answer-wrapper').appendChild(char);
 		}
+		
+		var show = document.createElement('button');
+		show.setAttribute('class','show-answer');
+		show.textContent = 'show';
+		document.querySelector('.answer-wrapper').appendChild(show);
+
+		
 
 		var hints = data[index]['hints'].split(',');
 		hints.forEach(function(item){
@@ -73,30 +80,47 @@ function quiz(data,index){
 			var answerColumn = document.querySelectorAll('.answer');
 			var answer = "";
 
-			answerColumn.forEach(function(item){
-				var char = item.value;
-				answer = answer+char;			
-			});
+		answerColumn.forEach(function(item){
+			var char = item.value;
+			answer = answer+char;			
+		});
 
-			if(answer == dataAnswer){
-				
-				if(index == data.length - 1){
-					dataQuestion.textContent = "Selamat, saudara memiliki IQ diatas rata - rata";				
+		if(answer == dataAnswer){
+			
+			if(index == data.length - 1){
+				dataQuestion.textContent = "Selamat, saudara memiliki IQ diatas rata - rata";				
 
-					if(answerWrapper.hasChildNodes){
-						while (answerWrapper.hasChildNodes()) {
-				    		answerWrapper.removeChild(answerWrapper.lastChild);
-						}	
-					}
-
-
-				}else{
-					index= index+1;
-					quiz(data,index);	
+				if(answerWrapper.hasChildNodes){
+					while (answerWrapper.hasChildNodes()) {
+			    		answerWrapper.removeChild(answerWrapper.lastChild);
+					}	
 				}
-				
-			}	
-		};
+
+			}else{
+				index= index+1;
+				quiz(data,index);	
+			}
+			
+		}	
+}
+
+		var answer = data[index]['answer'];
+		var answerBox = document.querySelectorAll('.answer');
+		show.addEventListener('click',showAnswer(answer,answerBox));
 }
 
 
+
+
+function showAnswer(answer,answerBox){
+	return function(){
+
+		var size = answer.length;
+		for(var i = 0; i < size; i++){
+			answerBox[i].setAttribute('value',answer[i]);	
+		}	
+	}
+		
+		
+
+}
