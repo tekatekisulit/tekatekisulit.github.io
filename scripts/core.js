@@ -63,8 +63,6 @@ function quiz(data,index){
 		show.textContent = 'show';
 		document.querySelector('.answer-wrapper').appendChild(show);
 
-		
-
 		var hints = data[index]['hints'].split(',');
 		hints.forEach(function(item){
 			var answer = document.querySelectorAll('.answer');
@@ -72,13 +70,24 @@ function quiz(data,index){
 		});	
 
 		var btn = document.querySelector('#submit');
-		btn.addEventListener('touchstart',checkAnswer);
-		btn.addEventListener('touchend',checkAnswer);
-		btn.addEventListener('click',checkAnswer);
+	
+		var dataQuiz = data;
+		var indexQuiz = index;
+		btn.addEventListener('click',checkAnswer(dataQuiz,indexQuiz));
 
-		function checkAnswer(){
-			var answerColumn = document.querySelectorAll('.answer');
-			var answer = "";
+		var answer = data[index]['answer'];
+		var answerBox = document.querySelectorAll('.answer');
+		show.addEventListener('click',showAnswer(answer,answerBox));
+}
+
+
+function checkAnswer(data,index){
+	return function(){
+		var answerColumn = document.querySelectorAll('.answer');
+		var answer = "";
+		var dataAnswer = data[index]['answer'];
+		var answerWrapper = document.querySelector('.answer-wrapper');
+		var dataQuestion = document.querySelector('.question');
 
 		answerColumn.forEach(function(item){
 			var char = item.value;
@@ -86,7 +95,7 @@ function quiz(data,index){
 		});
 
 		if(answer == dataAnswer){
-			
+				
 			if(index == data.length - 1){
 				dataQuestion.textContent = "Selamat, saudara memiliki IQ diatas rata - rata";				
 
@@ -102,15 +111,9 @@ function quiz(data,index){
 			}
 			
 		}	
+	}
+		
 }
-
-		var answer = data[index]['answer'];
-		var answerBox = document.querySelectorAll('.answer');
-		show.addEventListener('click',showAnswer(answer,answerBox));
-}
-
-
-
 
 function showAnswer(answer,answerBox){
 	return function(){
