@@ -57,7 +57,8 @@ function quiz(data,index){
 
 			document.querySelector('.answer-wrapper').appendChild(char);
 		}
-		
+
+
 		var show = document.createElement('button');
 		show.setAttribute('class','show-answer');
 		show.textContent = 'show';
@@ -94,9 +95,21 @@ function checkAnswer(data,index){
 			answer = answer+char;			
 		});
 
+		if(document.querySelector('.true-false') != null){
+			document.querySelector('.true-false').remove();
+		}
+
+		var trueFalse = document.createElement('img');
+		var show = document.querySelector('.show-answer');
+
 		if(answer == dataAnswer){
+
+			trueFalse.setAttribute('src','images/true.svg');
+			trueFalse.setAttribute('class','true-false');
+			document.querySelector('.answer-wrapper').insertBefore(trueFalse,show);
 				
-			if(index == data.length - 1){
+			setTimeout(function(){
+				if(index == data.length - 1){
 				dataQuestion.textContent = "Selamat, saudara memiliki IQ diatas rata - rata";				
 
 				if(answerWrapper.hasChildNodes){
@@ -105,11 +118,17 @@ function checkAnswer(data,index){
 					}	
 				}
 
-			}else{
-				index= index+1;
-				quiz(data,index);	
-			}
+				}else{
+					index= index+1;
+					quiz(data,index);	
+				}
+
+			},3000);
 			
+		}else{
+			trueFalse.setAttribute('src','images/false.png');
+			trueFalse.setAttribute('class','true-false');
+			document.querySelector('.answer-wrapper').insertBefore(trueFalse,show);
 		}	
 	}
 		
@@ -119,8 +138,10 @@ function showAnswer(answer,answerBox){
 	return function(){
 
 		var size = answer.length;
+
 		for(var i = 0; i < size; i++){
-			answerBox[i].setAttribute('value',answer[i]);	
+			
+			answerBox[i].value =answer[i];	
 		}	
 	}
 		

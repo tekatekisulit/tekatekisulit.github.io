@@ -120,6 +120,10 @@ div, section, article, input{
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.true-false{
+  width: 2em;
+}
+
 .copyright{
   font-size: 0.8em;
   color: white;
