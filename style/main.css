@@ -71,13 +71,7 @@ div, section, article, input{
   padding: 0.1em;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
-}
-
-/* Chrome 29+ */
-
-@media screen and (-webkit-min-device-pixel-ratio:0)
-  and (min-resolution:.001dpcm) {
-    .answer { padding-left: 0.5em; } 
+  padding-left: 0.3em;
 }
 
 
