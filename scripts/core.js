@@ -86,7 +86,7 @@ function checkAnswer(data,index){
 	return function(){
 		var answerColumn = document.querySelectorAll('.answer');
 		var answer = "";
-		var dataAnswer = data[index]['answer'];
+		var dataAnswer = data[index]['answer'].toLowerCase();
 		var answerWrapper = document.querySelector('.answer-wrapper');
 		var dataQuestion = document.querySelector('.question');
 
@@ -94,6 +94,8 @@ function checkAnswer(data,index){
 			var char = item.value;
 			answer = answer+char;			
 		});
+
+		answer = answer.toLowerCase();
 
 		if(document.querySelector('.true-false') != null){
 			document.querySelector('.true-false').remove();
