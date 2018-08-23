@@ -125,7 +125,7 @@ function checkAnswer(data,index){
 					quiz(data,index);	
 				}
 
-			},3000);
+			},1600);
 			
 		}else{
 			trueFalse.setAttribute('src','images/false.png');
