@@ -70,15 +70,19 @@ function quiz(data,index){
 			answer[item].setAttribute('value',dataAnswer[item]);
 		});	
 
-		var btn = document.querySelector('#submit');
-	
-		var dataQuiz = data;
-		var indexQuiz = index;
-		btn.addEventListener('click',checkAnswer(dataQuiz,indexQuiz));
-
 		var answer = data[index]['answer'];
 		var answerBox = document.querySelectorAll('.answer');
 		show.addEventListener('click',showAnswer(answer,answerBox));
+
+		var submit = document.createElement('button');
+		submit.setAttribute('id','submit');
+		submit.textContent = 'jawab';
+		document.querySelector('.answer-wrapper').appendChild(submit);
+	
+		var dataQuiz = data;
+		var indexQuiz = index;
+		submit.addEventListener('click',checkAnswer(dataQuiz,indexQuiz));
+
 }
 
 
