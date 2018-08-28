@@ -14,7 +14,7 @@ div, section, article, input{
   flex-wrap: wrap;
   background-image: url('../images/background.jpg');
   background-size: cover;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .box{
