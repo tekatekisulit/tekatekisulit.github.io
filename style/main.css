@@ -41,7 +41,7 @@ div, section, article, input{
 .caklontong img{
   display: block;
   width: 100%;
-  height: 75vh;
+  height: 60vh;
   margin-right: auto;
   margin-left: auto;
   z-index: -1;
@@ -51,7 +51,7 @@ div, section, article, input{
 .quiz{
   color: white;
   border-radius: 5px;
-  padding: 1.5em;
+  padding: 1em;
   background: linear-gradient(to bottom right,#223A5E,black);
   font-size: 0.9em;
   font-family: 'Lato', sans-serif;
