@@ -39,13 +39,14 @@ div, section, article, input{
 }
 
 .caklontong{
-  padding-bottom: -100px;
+  max-height: 100vh;
 }
 
 .caklontong img{
   display: block;
   width: 80%;
   height: 65vh;
+  margin-top: auto;
   margin-right: auto;
   margin-left: auto;
   z-index: -1;
